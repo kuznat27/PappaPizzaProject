@@ -14,7 +14,7 @@
     </nav>
     <ul class="list">
         <li>
-            <a href="pizzaMenu.jsp"><button>Order pizza</button></a>
+            <a href="/pizzaMenu"><button>Order pizza</button></a>
         </li>
         <li>
             <button>Change order status</button>
