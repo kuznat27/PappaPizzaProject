@@ -5,23 +5,17 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="./styles/pizzaMenuStyles.css"/>
+    <link rel="stylesheet" href="./styles/pizzaMenu.css"/>
     <title>Pizza menu</title>
 </head>
 <body>
 <header class="header">
-    <nav class="nav">
-        <h1 class="title1">Welcome to Papa Pizza</h1>
-        <div>
-            <button>Sign up</button>
-            <button>Sign up</button>
-        </div>
-    </nav>
+    <%@ include file="navigation.jsp"%>
 </header>
 <section class="section1">
-    <form class="form">
+    <div class="menu">
         <ul class="list">
-            <li>
+            <li class="menuNav item">
                 <span>№</span>
                 <span>Name</span>
                 <span>Price</span>
@@ -30,18 +24,20 @@
 
             <% ArrayList<PizzaType> pizzaArray = (ArrayList<PizzaType>) request.getAttribute("pizza"); %>
             <%for (int i = 0; i < pizzaArray.size(); i++) {%>
-            <li>
-                <span><%= pizzaArray.get(i).getPosition()%></span>
-                <span><%= pizzaArray.get(i).getName()%></span>
-                <span><%= pizzaArray.get(i).getPrice()%></span>
-                <span>
-                        <input type="number" name="quantity" min="0" max="5" value="0"/>
+            <form action="/addingPizza" method="post">
+                <li class="item color">
+                    <span><%= pizzaArray.get(i).getPosition()%></span>
+                    <span><%= pizzaArray.get(i).getName()%></span>
+                    <span><%= pizzaArray.get(i).getPrice()%></span>
+                    <span class="inputContainer">
+                            <input type="number" name=<%=pizzaArray.get(i).getPosition()%> min="0" max="5" value="0"/>
+                            <input type="submit" value="Add" class="subBtn"/>
                     </span>
-            </li>
+                </li>
+            </form>
             <% } %>
         </ul>
-        <input type="submit" value="Continue" class="subBtn"/>
-    </form>
+    </div>
 </section>
 </body>
 </html>

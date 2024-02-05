@@ -5,13 +5,7 @@
 </head>
 <body>
 <header class="header">
-    <nav class="nav">
-        <h1 class="title1">Welcome to Papa Pizza</h1>
-        <div>
-            <button>Sign up</button>
-            <button>Sign up</button>
-        </div>
-    </nav>
+    <%@ include file="navigation.jsp"%>
     <ul class="list">
         <li>
             <a href="/pizzaMenu"><button>Order pizza</button></a>

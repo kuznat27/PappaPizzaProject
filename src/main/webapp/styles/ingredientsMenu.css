@@ -14,7 +14,7 @@
     margin:50px 100px 0 100px;
     display: grid;
     justify-items: center;
-    gap:100px;
+    gap:60px;
 }
 
 .title1 {
@@ -30,10 +30,10 @@
 }
 
 .section1 {
-    margin:50px 100px 0 100px;
+    margin:20px 100px 0 100px;
 }
 
-.form {
+.menu {
     width:80%;
     margin-inline: auto;
 }
@@ -43,46 +43,54 @@
     display: grid;
 }
 
-.list li {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 20px 10px;
-    border-bottom: 1px solid black;
-    background-color: #e7f5dc;
-}
-
-.list li:first-child {
+.menuNav {
     background-color: #64ac8f;
     font-weight: bold;
     font-size: 18px;
     border-radius: 15px 15px 0 0;
 }
 
+.item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px 10px;
+    border-bottom: 1px solid black;
+    align-items: center;
+}
+
+.color {
+    background-color: #e7f5dc;
+}
+
 .list li span:first-child {
     margin-left:50px;
 }
 
-.list li span input[type="number"] {
+.list form li span input[type="number"] {
     padding:5px 10px;
     border-radius: 5px;
     border: 1px solid;
     outline: none;
+    cursor: pointer;
+}
+
+.inputContainer {
+    display: flex;
+    gap:140px;
 }
 
 .subBtn {
     display: block;
-    margin-left: auto;
     font-size: 18px;
-    margin-top: 20px;
     padding:10px 10px;
     background-color: transparent;
     border-radius: 10px;
     border: 1px solid black;
     cursor:pointer;
+    margin-right:20px;
 }
 
 .subBtn:hover {
-    background-color: #e7f5dc;
-    border-color: #64ac8f;
-    color: black;
+    background-color: #64ac8f;
+    color: white;
 }
