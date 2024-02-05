@@ -1,3 +1,5 @@
+package servlets;
+
 import model.Credentials;
 
 import javax.servlet.ServletException;
@@ -11,7 +13,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@WebServlet(name = "RegistrationServlet", value = "/RegistrationServlet")
+@WebServlet(name = "servlets.RegistrationServlet", value = "/servlets.RegistrationServlet")
 public class RegistrationServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

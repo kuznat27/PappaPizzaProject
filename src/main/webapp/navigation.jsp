@@ -17,16 +17,36 @@
         font-size: 24px;
         font-weight: bold;
     }
+
+    .auth-buttons {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
 </style>
 
 <nav class="nav">
     <h1 class="title1">Welcome to Papa Pizza</h1>
-    <div style="position: absolute; top: 10px; right: 10px;">
+    <div class="auth-buttons">
+        <%
+            //HttpSession session = request.getSession(false);
+            if (session != null && session.getAttribute("username") != null) {
+        %>
+        User Active
+        <form action="LogoutServlet" method="post" style="display: inline;">
+            <input type="submit" value="Exit">
+        </form>
+        <%
+        } else {
+        %>
         <form action="registration.jsp" style="display: inline;">
             <input type="submit" value="Sign Up">
         </form>
         <form action="login.jsp" style="display: inline;">
             <input type="submit" value="Sign In">
         </form>
+        <%
+            }
+        %>
     </div>
 </nav>
