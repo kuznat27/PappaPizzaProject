@@ -4,8 +4,8 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class ConnectToDB {
-    String getPizzaData = "select * from java_course.pizzatype";
-    String getIngredientsData = "select * from java_course.ingredients";
+    String getPizzaData = "select * from pizza_cafe.pizza_types";
+    String getIngredientsData = "select * from pizza_cafe.ingredients";
     Connection con;
     Statement statement;
     ResultSet result;
