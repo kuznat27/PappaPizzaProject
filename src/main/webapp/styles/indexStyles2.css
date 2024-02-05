@@ -49,7 +49,6 @@
 }
 
 .list li button:hover {
-    background-color: dimgrey;
+    background-color: #64ac8f;
     color: white;
-
 }

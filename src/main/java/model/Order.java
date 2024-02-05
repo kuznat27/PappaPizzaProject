@@ -37,11 +37,11 @@ public class Order {
     }
 
     public void setPizzaType(String pizzaType) {
-        this.pizzaType = pizzaType;
+        this.pizzaType += pizzaType;
     }
 
     public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
+        this.ingredients += ingredients ;
     }
 
     public void setTotalPrice(int totalPrice) {

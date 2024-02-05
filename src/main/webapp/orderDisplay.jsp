@@ -1,4 +1,3 @@
-<%@ page import="model.Order" %>
 <%@ page import="model.PizzaChoice" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.PizzaType" %>
@@ -13,13 +12,14 @@
 <html>
 <head>
     <title>Order display</title>
-    <link href="styles/orderStyles.css" rel="stylesheet">
+    <link href="styles/orderStyles2.css" rel="stylesheet">
 </head>
 <body>
 <header class="header">
     <%@ include file="navigation.jsp"%>
 </header>
 <section class="section1">
+    <h2 class="title2">Your order</h2>
     <div class="menu">
         <ul class="list">
             <li class="menuNav item">
@@ -33,25 +33,24 @@
 
             <%--How to not refresh it? --%>
 
-            <%PizzaChoice choice = (PizzaChoice) session.getAttribute("order"); %>
             <%ArrayList<PizzaType> pizzaArray = (ArrayList<PizzaType>) session.getAttribute("pizzaArray");%>
             <%ArrayList<IngredientType> ingredientsArray = (ArrayList<IngredientType>) session.getAttribute("ingredients");%>
             <%ArrayList<PizzaChoice> choicesArray = (ArrayList<PizzaChoice>) session.getAttribute("choicesArray"); %>
-            <%choicesArray.add(choice);%>
-
 
             <% for (int i = 0; i < choicesArray.size(); i++) { %>
             <li class="item color">
                 <span><%= i + 1 %></span>
                 <span>
-                    <% int pizzaIndex = Integer.parseInt(choicesArray.get(i).getPizzaType());%>
-                    <% String pizzaName = pizzaArray.get(pizzaIndex).getName();%>
+                    <% int pizzaIndex = Integer.parseInt(choicesArray.get(i).getPizzaType()) - 1;
+                        String pizzaName = pizzaArray.get(pizzaIndex).getName();
+                    %>
                     <%= pizzaName %>
                 </span>
                 <span><%=choicesArray.get(i).getPizzaQuantity()%></span>
                 <span>
-                    <% int ingredientIndex = Integer.parseInt(choicesArray.get(i).getIngredients());%>
-                    <% String ingredientName = ingredientsArray.get(ingredientIndex).getName();%>
+                    <% int ingredientIndex = Integer.parseInt(choicesArray.get(i).getIngredients()) - 1;
+                        String ingredientName = ingredientsArray.get(ingredientIndex).getName();
+                    %>
                     <%= ingredientName %>
                 </span>
                 <span><%=choicesArray.get(i).getIngredientQuantity()%></span>
@@ -61,7 +60,7 @@
 
             <a href="/pizzaMenu"><button class="btn">Add more pizza</button></a>
 
-            <form action="/sendingOrder" method="post">
+            <form action="/sendOrder" method="post">
                 <div class="addressContainer">
                     <h3 class="title3">Fill in your address, please. </h3>
                     <div class="inputContainer">
@@ -77,12 +76,3 @@
 </body>
 </html>
 
-<%--Order newOrder = new Order;--%>
-<%--for (int i = 0; i < choicesArray.size(); i++) {--%>
-<%--    String pizza = choicesArray.get(i).getPizzaType();--%>
-<%--    newOrder.setPizza(pizza);--%>
-<%--    String ingredient = choicesArray.get(i).getIngerdientType();--%>
-<%--    newOrder.setIngredient(pizza);--%>
-<%--    // { Pizza: 2x1, Ingredient: 1 }--%>
-<%--    // { Pizza: 2, 3; }--%>
-<%--}--%>

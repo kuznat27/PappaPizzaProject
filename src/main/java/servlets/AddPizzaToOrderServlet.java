@@ -36,7 +36,6 @@ public class AddPizzaToOrderServlet extends HttpServlet {
         choice.setPizzaType(paramName);
         choice.setPizzaQuantity(quantity);
         choice.setTotalPrice(pizzaPrice);
-
         session.setAttribute("order", choice);
 
         ArrayList<IngredientType> ingredientsArray = connection.getIngredientsFromDB();
