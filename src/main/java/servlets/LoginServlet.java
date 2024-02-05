@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.*;
 
-@WebServlet(name = "servlets.LoginServlet", value = "/servlets.LoginServlet")
+@WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
 
-                request.getRequestDispatcher("pizzaMenu.jsp").forward(request, response);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             } else {
                 response.sendRedirect("login.jsp?error=1");
             }

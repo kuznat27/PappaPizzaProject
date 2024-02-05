@@ -23,9 +23,14 @@
     <input type="submit" value="Submit">
 </form>
 
-<c:if test="${param.error == '1'}">
-    <p style="color: red;">Error. Try again.</p>
-</c:if>
+<%
+    String error = request.getParameter("error");
+    if("1".equals(error)){
+%>
+<p style="color: #d21e1e;">Error. Try again.</p>
+<%
+    }
+%>
 </body>
 </html>
 
