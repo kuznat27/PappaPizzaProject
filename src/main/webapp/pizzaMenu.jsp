@@ -5,69 +5,39 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="./styles/pizzaMenuStyles.css"/>
+    <link rel="stylesheet" href="./styles/pizzaMenu.css"/>
     <title>Pizza menu</title>
 </head>
 <body>
 <header class="header">
-    <nav class="nav">
-        <h1 class="title1">Welcome to Papa Pizza</h1>
-        <div>
-            <button>Sign up</button>
-            <button>Sign up</button>
-        </div>
-    </nav>
+    <%@ include file="navigation.jsp"%>
 </header>
-<%--                <% ArrayList<PizzaType> pizzaArray = (ArrayList<PizzaType>) request.getAttribute("pizza"); %>--%>
-<%--                <%for (int i = 0; i < pizzaArray.size(); i++) {%>--%>
-<%--                <li>--%>
-<%--                    <%= pizzaArray.get(i).getName() %>--%>
-<%--                </li>--%>
-<%--                <% } %>--%>
 <section class="section1">
-    <form class="form">
+    <div class="menu">
         <ul class="list">
-            <li>
+            <li class="menuNav item">
                 <span>№</span>
                 <span>Name</span>
                 <span>Price</span>
                 <span>Quantity</span>
             </li>
-            <li>
-                <span>1</span>
-                <span>Pepperoni</span>
-                <span>$15</span>
-                <span>
-                    <input type="number" name="quantity" min="0" max="5" value="0"/>
-                </span>
-            </li>
-            <li>
-                <span>2</span>
-                <span>Cheese</span>
-                <span>$15</span>
-                <span>
-                    <input type="number" name="quantity" min="0" max="5" value="0"/>
-                </span>
-            </li>
-            <li>
-                <span>3</span>
-                <span>Diablo</span>
-                <span>$15</span>
-                <span>
-                    <input type="number" name="quantity" min="0" max="5" value="0"/>
-                </span>
-            </li>
-            <li>
-                <span>1</span>
-                <span>Pepperoni</span>
-                <span>$15</span>
-                <span>
-                    <input type="number" name="quantity" min="0" max="5" value="0"/>
-                </span>
-            </li>
+
+            <% ArrayList<PizzaType> pizzaArray = (ArrayList<PizzaType>) request.getAttribute("pizza"); %>
+            <%for (int i = 0; i < pizzaArray.size(); i++) {%>
+            <form action="/addingPizza" method="post">
+                <li class="item color">
+                    <span><%= pizzaArray.get(i).getPosition()%></span>
+                    <span><%= pizzaArray.get(i).getName()%></span>
+                    <span><%= pizzaArray.get(i).getPrice()%></span>
+                    <span class="inputContainer">
+                            <input type="number" name=<%=pizzaArray.get(i).getPosition()%> min="0" max="5" value="0"/>
+                            <input type="submit" value="Add" class="subBtn"/>
+                    </span>
+                </li>
+            </form>
+            <% } %>
         </ul>
-        <input type="submit" value="Continue" class="subBtn"/>
-    </form>
+    </div>
 </section>
 </body>
 </html>
