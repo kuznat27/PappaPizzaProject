@@ -21,9 +21,12 @@
 
 <nav class="nav">
     <h1 class="title1">Welcome to Papa Pizza</h1>
-    <div>
-        <button>Sign up</button>
-        <button>Sign up</button>
+    <div style="position: absolute; top: 10px; right: 10px;">
+        <form action="registration.jsp" style="display: inline;">
+            <input type="submit" value="Sign Up">
+        </form>
+        <form action="login.jsp" style="display: inline;">
+            <input type="submit" value="Sign In">
+        </form>
     </div>
 </nav>
-
