@@ -8,10 +8,6 @@ public class Order {
     private String address = "";
     private String status = "";
 
-    public int getId() {
-        return id;
-    }
-
     public String getPizzaType() {
         return pizzaType;
     }
@@ -32,16 +28,12 @@ public class Order {
         return status;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void setPizzaType(String pizzaType) {
-        this.pizzaType += pizzaType;
+        this.pizzaType += pizzaType + " ";
     }
 
     public void setIngredients(String ingredients) {
-        this.ingredients += ingredients ;
+        this.ingredients += ingredients + " ";
     }
 
     public void setTotalPrice(int totalPrice) {

@@ -32,7 +32,7 @@ public class PizzaChoice {
     }
 
     public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
+        this.ingredients += ingredients;
     }
 
     public void setPizzaQuantity(int pizzaQuantity) {

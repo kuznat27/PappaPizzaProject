@@ -6,8 +6,10 @@ import java.util.ArrayList;
 public class ConnectToDB {
     String getPizzaData = "select * from pizza_cafe.pizza_types";
     String getIngredientsData = "select * from pizza_cafe.ingredients";
+    String addOrder = "insert into pizza_cafe.orders(pizza_name, ingredients, total_price, address, status) values (?, ?, ?, ?, ?)";
     Connection con;
     Statement statement;
+    PreparedStatement pStmt;
     ResultSet result;
 
     public ArrayList<PizzaType> getPizzaFromDB(){
@@ -52,6 +54,24 @@ public class ConnectToDB {
             e.printStackTrace();
         }
         return ingredientArray;
+    }
+
+    public void sendOrder(Order newOrder) {
+        try {
+            con = DriverManager.getConnection(Credentials.url, Credentials.uName, Credentials.password);
+            pStmt = con.prepareStatement(addOrder);
+
+            pStmt.setString(1, newOrder.getPizzaType());
+            pStmt.setString(2, newOrder.getIngredients());
+            pStmt.setInt(3, newOrder.getTotalPrice());
+            pStmt.setString(4, newOrder.getAddress());
+            pStmt.setString(5, newOrder.getStatus());
+
+            pStmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }
