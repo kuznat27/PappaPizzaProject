@@ -18,12 +18,6 @@
         font-weight: bold;
     }
 
-    .auth-buttons {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
-
     .btnContainer {
         display:flex;
         gap:20px;
@@ -41,7 +35,6 @@
         background-color: transparent;
     }
 
-
     .btnContainer button:hover {
         background-color: #64ac8f;
         color: white;
@@ -52,25 +45,23 @@
 <nav class="nav">
     <h1 class="title1">Welcome to Papa Pizza</h1>
     <div class="btnContainer">
-        <button>Sign up</button>
-        <button>Sign in</button>
-    <div class="auth-buttons">
         <%
             //HttpSession session = request.getSession(false);
             if (session != null && session.getAttribute("username") != null) {
         %>
-        User Active
-        <form action="LogoutServlet" method="post" style="display: inline;">
-            <input type="submit" value="Exit">
+
+        <button>User Active</button>
+        <form action="LogoutServlet" method="post" id="id1">
+            <button for="id1" type="submit">Exit</button>
         </form>
         <%
         } else {
         %>
-        <form action="registration.jsp" style="display: inline;">
-            <input type="submit" value="Sign Up">
+        <form action="registration.jsp" id="id2">
+            <button for="id2" type="submit">Sign Up</button>
         </form>
-        <form action="login.jsp" style="display: inline;">
-            <input type="submit" value="Sign In">
+        <form action="login.jsp" id="i3">
+            <button for="id3" type="submit">Sign In</button>
         </form>
         <%
             }
