@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" href="./styles/indexStyles.css"/>
+    <link rel="stylesheet" href="./styles/indexStyles2.css"/>
     <title>Pizza cafe</title>
 </head>
 <body>

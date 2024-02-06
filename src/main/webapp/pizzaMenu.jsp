@@ -5,7 +5,7 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="./styles/pizzaMenu.css"/>
+    <link rel="stylesheet" href="./styles/pizzaMenu2.css"/>
     <title>Pizza menu</title>
 </head>
 <body>
@@ -13,6 +13,7 @@
     <%@ include file="navigation.jsp"%>
 </header>
 <section class="section1">
+    <h3 class="title3">Choose the pizza you like</h3>
     <div class="menu">
         <ul class="list">
             <li class="menuNav item">

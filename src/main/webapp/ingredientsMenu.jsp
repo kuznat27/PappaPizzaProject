@@ -10,13 +10,14 @@
 <html>
 <head>
     <title>Ingredients choice</title>
-    <link rel="stylesheet" href="./styles/ingredientsMenu.css" />
+    <link rel="stylesheet" href="./styles/ingredientsMenu2.css" />
 </head>
 <body>
 <header class="header">
     <%@ include file="navigation.jsp"%>
 </header>
     <section class="section1">
+        <h3 class="title3">Add your favourite ingredients</h3>
         <div class="menu">
             <ul class="list">
                 <li class="menuNav item">

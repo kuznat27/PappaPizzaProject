@@ -23,10 +23,37 @@
         top: 10px;
         right: 10px;
     }
+
+    .btnContainer {
+        display:flex;
+        gap:20px;
+    }
+
+    .btnContainer button {
+        display: block;
+        font-size: 16px;
+        padding:8px 8px;
+        border-radius: 10px;
+        border: 1px solid black;
+        cursor:pointer;
+        margin-top:20px;
+        margin-inline:auto;
+        background-color: transparent;
+    }
+
+
+    .btnContainer button:hover {
+        background-color: #64ac8f;
+        color: white;
+    }
+
 </style>
 
 <nav class="nav">
     <h1 class="title1">Welcome to Papa Pizza</h1>
+    <div class="btnContainer">
+        <button>Sign up</button>
+        <button>Sign in</button>
     <div class="auth-buttons">
         <%
             //HttpSession session = request.getSession(false);
@@ -50,3 +77,4 @@
         %>
     </div>
 </nav>
+

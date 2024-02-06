@@ -37,6 +37,13 @@ public class AddIngredientToOrderServlet extends HttpServlet {
         choice.setIngredientQuantity(quantity);
         choice.setTotalPrice(ingredientPrice);
 
+        System.out.println(choice);
+
+        ArrayList<PizzaChoice> choicesArray = (ArrayList<PizzaChoice>) session.getAttribute("choicesArray");
+        choicesArray.add(choice);
+
+        System.out.println(choicesArray);
+
         session.setAttribute("order", choice);
 
         response.sendRedirect("orderDisplay.jsp");

@@ -2,7 +2,6 @@ package model;
 
 public class PizzaChoice {
     private String pizzaType ="";
-
     private int pizzaQuantity = 0;
     private String ingredients = "";
     private int ingredientQuantity = 0;
@@ -21,7 +20,7 @@ public class PizzaChoice {
     }
 
     public void setPizzaType(String pizzaType) {
-        this.pizzaType = pizzaType;
+        this.pizzaType += pizzaType;
     }
 
     public int getPizzaQuantity() {
@@ -33,7 +32,7 @@ public class PizzaChoice {
     }
 
     public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
+        this.ingredients += ingredients;
     }
 
     public void setPizzaQuantity(int pizzaQuantity) {
@@ -46,5 +45,16 @@ public class PizzaChoice {
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice += totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "PizzaChoice{" +
+                "pizzaType='" + pizzaType + '\'' +
+                ", pizzaQuantity=" + pizzaQuantity +
+                ", ingredients='" + ingredients + '\'' +
+                ", ingredientQuantity=" + ingredientQuantity +
+                ", totalPrice=" + totalPrice +
+                '}';
     }
 }
