@@ -39,4 +39,4 @@ build/
 
 *.idea
 
-src/main/java/model/Credentials.java
+!**src/main/java/model/Credentials.java

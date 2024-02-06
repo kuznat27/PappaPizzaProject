@@ -35,7 +35,6 @@
         background-color: transparent;
     }
 
-
     .btnContainer button:hover {
         background-color: #64ac8f;
         color: white;
@@ -46,8 +45,27 @@
 <nav class="nav">
     <h1 class="title1">Welcome to Papa Pizza</h1>
     <div class="btnContainer">
-        <button>Sign up</button>
-        <button>Sign in</button>
+        <%
+            //HttpSession session = request.getSession(false);
+            if (session != null && session.getAttribute("username") != null) {
+        %>
+
+        <button>User Active</button>
+        <form action="LogoutServlet" method="post" id="id1">
+            <button for="id1" type="submit">Exit</button>
+        </form>
+        <%
+        } else {
+        %>
+        <form action="registration.jsp" id="id2">
+            <button for="id2" type="submit">Sign Up</button>
+        </form>
+        <form action="login.jsp" id="i3">
+            <button for="id3" type="submit">Sign In</button>
+        </form>
+        <%
+            }
+        %>
     </div>
 </nav>
 
