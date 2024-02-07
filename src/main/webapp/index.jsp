@@ -11,7 +11,7 @@
             <a href="/pizzaMenu"><button>Order pizza</button></a>
         </li>
         <li>
-            <button>Change order status</button>
+            <a href="/fetchingOrders"><button>Change order status</button></a>
         </li>
     </ul>
 </header>

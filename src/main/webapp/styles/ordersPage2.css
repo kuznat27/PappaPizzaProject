@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.header {
+    margin:50px 100px 0 100px;
+    display: grid;
+    justify-items: center;
+    gap:60px;
+}
+
+.section1 {
+    margin:40px 100px 100px 100px;
+}
+
+.menu {
+    width:80%;
+    margin-inline: auto;
+}
+
+.list {
+    list-style: none;
+    display: grid;
+}
+
+.title2 {
+    margin:40px 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.menuNav {
+    margin-top:40px;
+    background-color: #64ac8f;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 15px 15px 0 0;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 50px repeat(6, 1fr) ;
+    padding: 20px 10px;
+    border-bottom: 1px solid black;
+    align-items: center;
+}
+
+.item span:last-of-type {
+    justify-self: center;
+}
+
+.color {
+    background-color: #e7f5dc;
+}
+
+.list li span:first-child {
+    margin-left:50px;
+}
+
+.list li span:nth-child(6) {
+    text-align: center;
+}
+
+.list form li span input[type="number"] {
+    padding:5px 10px;
+    border-radius: 5px;
+    border: 1px solid;
+    outline: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none
+}
+
+.btn {
+    display: block;
+    font-size: 16px;
+    padding:8px 8px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor:pointer;
+    margin-top:40px;
+    margin-inline:auto;
+}
+
+.btn:hover {
+    background-color: #64ac8f;
+    color: white;
+}
+
+.addressContainer {
+    margin-top:40px;
+    display: grid;
+    gap:20px;
+}
+
+.title3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btnContainer {
+    display: flex;
+    gap:20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subBtn {
+    display: block;
+    font-size: 16px;
+    padding:8px 8px;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor:pointer;
+    background-color: transparent;
+}
+
+.subBtn:hover {
+    background-color: #64ac8f;
+    color: white;
+}
+
+.optionContainer {
+    display: grid;
+    place-items: center;
+    margin-top:20px;
+    gap:10px;
+}
+
+:is(.optionContainer, .item) input[type="radio"] {
+    cursor: pointer;
+}

@@ -6,7 +6,16 @@ public class Order {
     private String ingredients = "";
     private int totalPrice = 0;
     private String address = "";
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private String status = "";
+
+    public int getId() {
+        return id;
+    }
 
     public String getPizzaType() {
         return pizzaType;
@@ -30,6 +39,14 @@ public class Order {
 
     public void setPizzaType(String pizzaType) {
         this.pizzaType += pizzaType + " ";
+    }
+
+    public void setNewPizzaStr(String pizzaType) {
+        this.pizzaType = pizzaType;
+    }
+
+    public void setNewIngredientStr(String ingredients) {
+        this.ingredients = ingredients;
     }
 
     public void setIngredients(String ingredients) {

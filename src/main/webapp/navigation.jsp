@@ -8,9 +8,14 @@
 <style>
     .nav {
         width:100%;
+        padding: 40px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .user {
+        margin: auto 0;
     }
 
     .title1 {
@@ -30,8 +35,6 @@
         border-radius: 10px;
         border: 1px solid black;
         cursor:pointer;
-        margin-top:20px;
-        margin-inline:auto;
         background-color: transparent;
     }
 
@@ -50,7 +53,7 @@
             if (session != null && session.getAttribute("username") != null) {
         %>
 
-        <button>User Active</button>
+        <div class="user">User Active</div>
         <form action="LogoutServlet" method="post" id="id1">
             <button for="id1" type="submit">Exit</button>
         </form>
@@ -61,7 +64,7 @@
             <button for="id2" type="submit">Sign Up</button>
         </form>
         <form action="login.jsp" id="i3">
-            <button for="id3" type="submit">Sign In</button>
+            <button for="id3" type="submit">Log In</button>
         </form>
         <%
             }
