@@ -16,13 +16,14 @@ public class ChangeOrderStatusServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
 
         int id = Integer.parseInt(request.getParameter("orderId"));
         String status = request.getParameter("status");
 
         connection.changeOrderStatus(status, id);
 
+        session.removeAttribute("orders");
         response.sendRedirect("/");
-
     }
 }
